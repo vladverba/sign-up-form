@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
+
+    <!-- link to JS and CSS files -->
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Sign Up</title>
+  </head>
+  <body>
+    <div class="container">
+      <!-- least amount of info possible - just email and password -->
+      <!-- instead of username - use email as identifier -->
+      <!-- auto focus on email - fewer clicks -->
+      <!-- remove annoying gmail auto fill popup -->
+
+      <form action="">
+        <h3>Sign Up</h3>
+        <!-- setup correct input types - dont have to look for characters -->
+        <p class="input_holder">
+          <input
+            autocomplete="off"
+            id="user_email"
+            type="email"
+            placeholder="Email"
+            autofocus
+          />
+        </p>
+
+        <p class="input_holder">
+          <input
+            autocomplete="off"
+            id="password"
+            type="password"
+            placeholder="Password"
+          />
+          <i class="bi bi-eye-slash" id="togglePassword"></i>
+        </p>
+
+        <input
+          class="form-button"
+          onclick="validateFormInput()"
+          type="submit"
+          value="Sign Up"
+        />
+      </form>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

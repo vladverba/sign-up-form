@@ -5,12 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <!-- link to JS and CSS files -->
+
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
     />
 
-    <!-- link to JS and CSS files -->
     <link rel="stylesheet" href="style.css" />
 
     <title>Sign Up</title>
@@ -22,14 +23,14 @@
       <!-- auto focus on email - fewer clicks -->
       <!-- remove annoying gmail auto fill popup -->
 
-      <form action="">
+      <form action="" onsubmit="return false">
         <h3>Sign Up</h3>
         <!-- setup correct input types - dont have to look for characters -->
         <p class="input_holder">
           <input
             autocomplete="off"
             id="user_email"
-            type="email"
+            type="text"
             placeholder="Email"
             autofocus
           />
@@ -47,10 +48,11 @@
 
         <input
           class="form-button"
-          onclick="validateFormInput()"
+          onclick="validateInput()"
           type="submit"
           value="Sign Up"
         />
+        <div class="error_message"></div>
       </form>
     </div>
     <script src="script.js"></script>

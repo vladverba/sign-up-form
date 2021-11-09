@@ -10,32 +10,6 @@ togglePassword.addEventListener("click", function (e) {
   this.classList.toggle("bi-eye");
 });
 
-function validateFormInput() {
-  var errorBox = document.getElementsByClassName("error_message")[0];
-
-  firstName = checkFirstName();
-  if (firstName == true) {
-    emailValidate = validateEmail();
-    if (emailValidate == true) {
-      errorBox.textContent = "Great Success!";
-      errorBox.style.color = "green";
-    }
-  }
-}
-
-function checkFirstName() {
-  var nameInput = document.getElementById("first_name");
-  var errorBox = document.getElementsByClassName("error_message")[0];
-
-  if (nameInput.value.length < 2) {
-    errorBox.textContent = "Please enter a valid first name.";
-    errorBox.style.color = "red";
-    return false;
-  } else {
-    return true;
-  }
-}
-
 function validateEmail() {
   var emailInput = document.getElementById("user_email");
   var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
@@ -46,7 +20,32 @@ function validateEmail() {
   } else {
     errorBox.textContent = "Please enter a valid email.";
     errorBox.style.color = "red";
-
     return false;
+  }
+}
+
+function validatePassword() {
+  var passwordInput = document.getElementById("password");
+  var errorBox = document.getElementsByClassName("error_message")[0];
+
+  if (passwordInput.value.length < 2) {
+    errorBox.textContent = "Password length must be longer than 2 characters.";
+    errorBox.style.color = "red";
+    return false;
+  } else {
+    return true;
+  }
+}
+
+function validateInput() {
+  var errorBox = document.getElementsByClassName("error_message")[0];
+
+  email = validateEmail();
+  if (email == true) {
+    pass = validatePassword();
+    if (pass == true) {
+      errorBox.textContent = "Great Success!";
+      errorBox.style.color = "green";
+    }
   }
 }
